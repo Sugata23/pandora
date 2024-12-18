@@ -11,20 +11,21 @@ const TextFields = ({
     ...rest
 }) => {
     return (
-        <div className="">
+        <div className={`text-field-wrapper ${classes}`}>
             <label 
-            className=""
+            className="label-text"
             htmlFor={name}
             >
                 {label}
             </label>
             <input
                 type="text"
-                className=""
+                className={`text-field ${fieldClasses}`}
                 id={name}
                 placeholder={name}
                 {...rest}
             />
+            {helperText && <p className="helper-text">{helperText}</p>}
         </div>
     )
 }
