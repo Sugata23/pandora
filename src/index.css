@@ -77,6 +77,53 @@
     
     hover:ring-light-onSurface
     dark:hover:ring-dark-onSurface
-    ;
+    
+    focus:ring-2
+    focus:ring-light-primary
+    dark:focus:ring-dark-primary;
   }
+
+  .text-field::placeholder {
+    @apply opacity-0
+    transition-opacity
+    duration-short3
+    ease-linear;
+  }
+
+  .text-field:focus::placeholder {
+    @apply opacity-100;
+  }
+
+  .label-text {
+    @apply absolute
+    text-light-onSurfaceVariant
+    dark:text-dark-onSurfaceVariant
+    bg-light-background
+    dark:bg-dark-background
+    text-labelLarge
+    top-[18PX]
+    left-4
+    px-2
+    origin-[center_left]
+    pointer-events-none
+    select-none
+    transition-[color, transform]
+    duration-short4
+    ease-standard ;
+  }
+
+  .text-field-wrapper:hover .label-text{
+    @apply text-light-onSurface
+    dark:text-dark-onSurface;
+  }
+
+  .text-field-wrapper:focus-within .label-text,
+  .text-field-wrapper:has(.text-field:not(:placeholder-shown))  .label-text {
+    @apply 
+    -translate-y-7
+    -translate-x-1/2
+    scale-[0.85];
+  
+  }
+
 }
