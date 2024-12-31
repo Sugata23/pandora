@@ -119,11 +119,13 @@
 
   .text-field-wrapper:focus-within .label-text,
   .text-field-wrapper:has(.text-field:not(:placeholder-shown))  .label-text {
-    @apply 
+    @apply translate-x-1/2
     -translate-y-7
-    -translate-x-1/2
     scale-[0.85];
-  
   }
 
+  .text-field-wrapper:focus-within .label-text{
+    @apply text-light-primary
+    dark:text-dark-primary;
+  }
 }
